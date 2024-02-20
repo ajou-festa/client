@@ -21,7 +21,7 @@ const SectionBar = ({
   const router = useRouter();
 
   const [selectedIndex, setSelectedIndex] = useState(
-    SECTION_LIST.findIndex((s) => s.section === selectedSection),
+    SECTION_LIST.findIndex((s) => s.section === selectedSection)
   );
   const maxIndex = SECTION_LIST.length - 1;
 

@@ -7,6 +7,7 @@ import SectionBar from "./_components/sectionBar";
 import PubNavigator from "./_components/pubNavigator";
 import fetchPubs from "../lib/data";
 import Modal from "../_commons/modal";
+// import { useIdStore } from "../hooks/useModalStore";
 
 export const metadata = {
   title: "Pubs",
@@ -20,11 +21,15 @@ interface PubsPageProps {
   };
 }
 
-const PubsPage = async ({ searchParams }: PubsPageProps) => {
+const PubsPage = ({ searchParams }: PubsPageProps) => {
   // day가 쿼리스트링으로 넘어오지 않으면 오늘 날짜로 설정
   const selectedDay = Number(searchParams?.day) || getCurrentDay(new Date());
   // section이 쿼리스트링으로 넘어오지 않으면 G-1로 설정
   const selectedSection = searchParams?.section || "seongho1";
+  // const [pubs, setPubs] = useState([]);
+
+  // const { dayId, sectionId, setDayId, setSectionId } = useIdStore();
+  // console.log(dayId, "dayId", sectionId);
 
   if (selectedDay === -1) {
     return <div>Invalid Date</div>;
@@ -34,9 +39,19 @@ const PubsPage = async ({ searchParams }: PubsPageProps) => {
     return <div>Invalid Section</div>;
   }
 
-  const pubs = await fetchPubs();
   // const totalPubs = await fetchPubs(selectedDay, selectedSection);
+  // const totalPubs = await fetchPubs();
 
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const totalPubs = await fetchPubs();
+  //       setPubs(totalPubs);
+  //     } catch (error) {}
+  //   };
+
+  //   fetchData();
+  // }, [selectedDay, selectedSection]);
   return (
     <>
       <DateDisplay selectedDay={selectedDay} />
@@ -45,9 +60,12 @@ const PubsPage = async ({ searchParams }: PubsPageProps) => {
         <Map
           selectedDay={selectedDay}
           selectedSection={selectedSection}
-          pubs={pubs}
+          // setDayId={setDayId}
+          // setSectionId={setSectionId}
+
+          // pubs={pubs}
         />
-        <PubNavigator pubs={pubs} />
+        {/* <PubNavigator pubs={pubs} /> */}
         <SectionBar
           selectedDay={selectedDay}
           selectedSection={selectedSection}

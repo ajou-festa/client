@@ -2,7 +2,12 @@ import { FESTIVAL_DATE } from "@/app/lib/constants";
 import { isToday, getFormattedDate } from "@/app/lib/utils";
 import React from "react";
 
-const DateDisplay = ({ selectedDay }: { selectedDay: number }) => {
+const DateDisplay = ({
+  selectedDay,
+}: {
+  selectedDay: number;
+  // setDayId: (props: string) => void;
+}) => {
   if (selectedDay === -1 || selectedDay > FESTIVAL_DATE.length) {
     return null;
   }

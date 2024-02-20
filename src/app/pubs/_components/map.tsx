@@ -7,10 +7,13 @@ import { getPubByLocation } from "@/app/lib/utils";
 interface MapProps {
   selectedDay: number;
   selectedSection: string;
-  pubs: Pub[];
+  // pubs: Pub[];
+  // sectionId: string;
+  // setSectionId: (props: string) => void;
+  // setDayId: (props: string) => void;
 }
 
-const Map = ({ selectedDay, selectedSection, pubs }: MapProps) => {
+const Map = ({ selectedDay, selectedSection }: MapProps) => {
   const section = SECTION_LIST.find((s) => s.section === selectedSection);
 
   if (!section) {
@@ -30,7 +33,7 @@ const Map = ({ selectedDay, selectedSection, pubs }: MapProps) => {
         sizes="(max-width: 60rem) 100vw, 40rem"
         priority
       />
-      {PUB_LOCATIONS[selectedDay][selectedSection] &&
+      {/* {PUB_LOCATIONS[selectedDay][selectedSection] &&
         PUB_LOCATIONS[selectedDay][selectedSection].map(
           (location: PubLocation, index: number) => (
             <PubIcon
@@ -38,8 +41,8 @@ const Map = ({ selectedDay, selectedSection, pubs }: MapProps) => {
               pubLocation={location}
               pub={getPubByLocation(pubs, location)}
             />
-          ),
-        )}
+          )
+        )} */}
     </div>
   );
 };

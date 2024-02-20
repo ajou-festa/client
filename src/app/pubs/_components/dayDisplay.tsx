@@ -7,7 +7,13 @@ import { useToggle } from "@/app/hooks/useToggle";
 import { useMemo } from "react";
 import ArrowDown from "@/public/arrow-down.svg";
 
-const DayDisplay = ({ selectedDay }: { selectedDay: number }) => {
+const DayDisplay = ({
+  selectedDay,
+}: // setDayId,
+{
+  selectedDay: number;
+  // setDayId: (props: string) => void;
+}) => {
   const { getQueryParam, getQueryUrl } = useQueryWithDefault();
   const [isToggle, handleToggle] = useToggle();
 
@@ -16,9 +22,9 @@ const DayDisplay = ({ selectedDay }: { selectedDay: number }) => {
   const queryUrls = useMemo(
     () =>
       FESTIVAL_DATE.map((date, index) =>
-        getQueryUrl(index + 1, selectedSection),
+        getQueryUrl(index + 1, selectedSection)
       ),
-    [selectedSection],
+    [selectedSection]
   );
 
   return (

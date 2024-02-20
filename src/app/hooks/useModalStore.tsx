@@ -17,3 +17,17 @@ const useModalStore = create<ModalStore>()((set) => ({
 }));
 
 export default useModalStore;
+
+type IdStore = {
+  dayId: string;
+  sectionId: string;
+  setDayId: (props: string) => void;
+  setSectionId: (props: string) => void;
+};
+
+export const useIdStore = create<IdStore>()((set) => ({
+  dayId: "1",
+  sectionId: "seongho",
+  setDayId: (dayId: string) => set({ dayId }),
+  setSectionId: (sectionId: string) => set({ sectionId }),
+}));
