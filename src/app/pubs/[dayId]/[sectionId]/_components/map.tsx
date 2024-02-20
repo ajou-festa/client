@@ -30,7 +30,7 @@ const Map = ({ selectedDay, selectedSection, pubs }: MapProps) => {
         sizes="(max-width: 60rem) 100vw, 40rem"
         priority
       />
-      {PUB_LOCATIONS[selectedDay][selectedSection] &&
+      {/* {PUB_LOCATIONS[selectedDay][selectedSection] &&
         PUB_LOCATIONS[selectedDay][selectedSection].map(
           (location: PubLocation, index: number) => (
             <PubIcon
@@ -39,7 +39,7 @@ const Map = ({ selectedDay, selectedSection, pubs }: MapProps) => {
               pub={getPubByLocation(pubs, location)}
             />
           ),
-        )}
+        )} */}
     </div>
   );
 };

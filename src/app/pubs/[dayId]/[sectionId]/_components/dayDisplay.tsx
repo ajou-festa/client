@@ -11,15 +11,15 @@ const DayDisplay = ({ selectedDay }: { selectedDay: number }) => {
   const { getQueryParam, getQueryUrl } = useQueryWithDefault();
   const [isToggle, handleToggle] = useToggle();
 
-  const selectedSection = getQueryParam("section", "seongho1");
+  // const selectedSection = getQueryParam("section", "seongho1");
 
-  const queryUrls = useMemo(
-    () =>
-      FESTIVAL_DATE.map((date, index) =>
-        getQueryUrl(index + 1, selectedSection),
-      ),
-    [selectedSection],
-  );
+  // const queryUrls = useMemo(
+  //   () =>
+  //     FESTIVAL_DATE.map((date, index) =>
+  //       getQueryUrl(index + 1, selectedSection)
+  //     ),
+  //   [selectedSection]
+  // );
 
   return (
     <div
@@ -41,7 +41,7 @@ const DayDisplay = ({ selectedDay }: { selectedDay: number }) => {
               key={index}
               className={`w-[12.3rem] py-[0.8rem] text-2xl text-center font-normal hover:bg-blue-100 hover:text-blue-400 hover:font-semibold`}
             >
-              <Link href={queryUrls[index]}>DAY {index + 1}</Link>
+              <Link href={`../${index + 1}/seongho`}>DAY {index + 1}</Link>
             </li>
           ))}
         </ul>

@@ -21,24 +21,37 @@ const SectionBar = ({
   const router = useRouter();
 
   const [selectedIndex, setSelectedIndex] = useState(
-    SECTION_LIST.findIndex((s) => s.section === selectedSection),
+    SECTION_LIST.findIndex((s) => s.section === selectedSection)
   );
   const maxIndex = SECTION_LIST.length - 1;
 
   const handleClickLeft = () => {
-    if (selectedIndex === 0) {
-      setSelectedIndex(maxIndex);
-    } else {
-      setSelectedIndex(selectedIndex - 1);
-    }
-  };
-
-  const handleClickRight = () => {
+    let prevIndex;
     if (selectedIndex === maxIndex) {
-      setSelectedIndex(0);
+      prevIndex = 0;
     } else {
-      setSelectedIndex(selectedIndex + 1);
+      prevIndex = selectedIndex - 1;
     }
+
+    setSelectedIndex(prevIndex);
+    router.push(`../${selectedDay}/${SECTION_LIST[prevIndex].section}`);
+  };
+  const handleClickRight = () => {
+    let nextIndex;
+    if (selectedIndex === maxIndex) {
+      nextIndex = 0;
+    } else {
+      nextIndex = selectedIndex + 1;
+    }
+
+    setSelectedIndex(nextIndex);
+    if (nextIndex < SECTION_LIST.length) {
+      router.push(`../${selectedDay}/${SECTION_LIST[nextIndex]?.section}`);
+    } else {
+      console.error("nextIndex is out of range");
+    }
+    console.log("click");
+    // router.push(`../${selectedDay}/${SECTION_LIST[nextIndex].section}`);
   };
 
   const handleClickSection = (index: number) => {
@@ -46,9 +59,11 @@ const SectionBar = ({
     handleToggle();
   };
 
-  useEffect(() => {
-    router.push(getQueryUrl(selectedDay, SECTION_LIST[selectedIndex].section));
-  }, [selectedIndex]);
+  // useEffect(() => {
+  //   router.push(
+  //     `http://localhost:3000/pubs/${selectedDay}/${SECTION_LIST[selectedIndex]?.section}` //보완
+  //   );
+  // }, [selectedIndex, selectedDay]);
 
   return (
     <div className="z-10 absolute bottom-0 w-full">
@@ -66,7 +81,7 @@ const SectionBar = ({
                 }
                 onClick={() => handleClickSection(index)}
               >
-                {section.name}
+                {section?.name}
               </div>
               <div
                 className={`w-full h-[0.25px] bg-gray-50 ${
@@ -83,7 +98,7 @@ const SectionBar = ({
           <ArrowLeft />
         </button>
         <span className="w-[13.8rem] font-normal text-3xl text-center text-blue-400">
-          {SECTION_LIST[selectedIndex].name}
+          {SECTION_LIST[selectedIndex]?.name}
         </span>
         <button onClick={() => handleClickRight()}>
           <ArrowLeft className="rotate-180" />
