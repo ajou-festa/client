@@ -61,7 +61,7 @@ const EmblaCarousel = (props: PropType) => {
                       : getFormattedDate(FESTIVAL_DATE[index])}
                   </span>
                 </div>
-                <div className="w-[29.5rem] text-brown-500 text-center text-3xl font-bold  flex items-center justify-center mb-[2rem]">
+                <div className="w-[32.5rem] text-brown-500 text-center text-3xl font-bold  flex items-center justify-center mb-[2rem]">
                   {`DAY ${index + 1} `}
                 </div>
                 <Schedule stages={stages[index]} />
@@ -85,7 +85,7 @@ const EmblaCarousel = (props: PropType) => {
                           viewBox="0 0 8 8"
                           fill="none"
                         >
-                          <circle cx="4" cy="4" r="4" fill="white" />
+                          <circle cx="4" cy="4" r="4" fill="#B67E5C" />
                         </svg>
                       ) : (
                         <svg
@@ -95,7 +95,7 @@ const EmblaCarousel = (props: PropType) => {
                           viewBox="0 0 8 8"
                           fill="none"
                         >
-                          <circle cx="4" cy="4" r="4" fill="#00285C" />
+                          <circle cx="4" cy="4" r="4" fill="#E6C299" />
                         </svg>
                       )}
                     </DotButton>
