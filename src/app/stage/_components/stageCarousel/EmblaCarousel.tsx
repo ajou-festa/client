@@ -49,12 +49,12 @@ const EmblaCarousel = (props: PropType) => {
 
   return (
     <div className="flex flex-col">
-      <div className="embla flex flex-col">
+      <div className="embla flex flex-col items-center">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container">
             {slides.map((index) => (
               <div className="embla__slide flex flex-col" key={index}>
-                <div className="w-[29.5rem] flex justify-center items-center text-center h-[3rem] flex-shrink-0">
+                <div className="w-[32.5rem] flex justify-center items-center text-center h-[3rem] flex-shrink-0">
                   <span className="w-[8rem] h-[2.1rem] font-semibold text-brown-100 text-[1.4rem] rounded-[3rem] bg-brown-400 mb-[0.5rem] p-[0.5rem] flex justify-center items-center">
                     {isToday(index + 1)
                       ? "TODAY"

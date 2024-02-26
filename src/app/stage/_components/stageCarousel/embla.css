@@ -10,6 +10,7 @@
 }
 .embla__viewport {
   overflow: hidden;
+  width: 325px;
 }
 .embla__container {
   backface-visibility: hidden;
@@ -21,6 +22,7 @@
   flex: 0 0 var(--slide-size);
   min-width: 0;
   height: 600px;
+  width: 325px;
   padding-left: var(--slide-spacing);
   position: relative;
 }
