@@ -22,7 +22,7 @@ const DayDisplay = ({
 
   const queryUrls = useMemo(
     () => FESTIVAL_DATE.map((date, index) => getQueryUrl(index + 1, section)),
-    [section],
+    [section]
   );
 
   return (

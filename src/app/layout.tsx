@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className="flex items-center justify-center">
-        <div className="h-screen w-screen max-w-screen-sm bg-blue-800 bg-skyBlue-gradient relative flex flex-col items-center">
+        <div className="h-screen w-screen max-w-screen-sm bg-brown-100 relative flex flex-col items-center">
           <div className="h-[calc(100vh-10.4rem)] flex flex-col justify-center items-center">
             {children}
           </div>

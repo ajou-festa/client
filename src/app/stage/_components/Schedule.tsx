@@ -10,7 +10,7 @@ interface ScheduleProps {
 
 const Schedule = ({ stages }: ScheduleProps) => {
   return (
-    <div className="w-[27.4rem] h-[30.7rem] min-h-[30.7rem] flex flex-col items-center relative rounded-[1rem] bg-blue-700">
+    <div className="w-[27.4rem] h-[30.7rem] min-h-[30.7rem] flex flex-col items-center relative rounded-[1rem] bg-white">
       <ScheduleTitleWrapper />
       <div className="min-h-[23rem] overflow-y-scroll w-[27.4rem] h-[22rem] px-[2.5rem]">
         {stages.map((stage, index) => (
@@ -21,7 +21,7 @@ const Schedule = ({ stages }: ScheduleProps) => {
           />
         ))}
       </div>
-      <ScheduleGradient className="absolute bottom-0" />
+      {/* <ScheduleGradient className="absolute bottom-0" /> */}
     </div>
   );
 };
