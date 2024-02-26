@@ -70,7 +70,7 @@ const Footer = () => {
           <span className="text-lg">동아리</span>
         </Link>
         <Link
-          href={`/dongbak?day=1&section=A`}
+          href={`/dongyeon`}
           className={`flex flex-col flex-1 items-center justify-center m-0 gap-2 ${
             selectedButton === "동연소식" ? "text-brown-500" : "text-gray-200"
           }`}
