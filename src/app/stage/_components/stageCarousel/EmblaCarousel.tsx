@@ -54,18 +54,18 @@ const EmblaCarousel = (props: PropType) => {
           <div className="embla__container">
             {slides.map((index) => (
               <div className="embla__slide flex flex-col" key={index}>
-                <div className="w-[29.5rem] flex justify-center items-center text-center h-[3rem] flex-shrink-0">
-                  <span className="w-[8rem] h-[2.1rem] font-semibold text-blue-300 text-[1.4rem] rounded-[3rem] bg-blue-700 mb-[0.5rem] p-[0.5rem] flex justify-center items-center">
+                <div className="w-[32.5rem] flex justify-center items-center text-center h-[3rem] flex-shrink-0">
+                  <span className="w-[8rem] h-[2.1rem] font-semibold text-brown-100 text-[1.4rem] rounded-[3rem] bg-brown-400 mb-[0.5rem] p-[0.5rem] flex justify-center items-center">
                     {isToday(index + 1)
                       ? "TODAY"
                       : getFormattedDate(FESTIVAL_DATE[index])}
                   </span>
                 </div>
-                <div className="w-[29.5rem] text-white text-center text-3xl font-bold  flex items-center justify-center mb-[2rem]">
+                <div className="w-[32.5rem] text-brown-500 text-center text-3xl font-bold flex items-center justify-center mb-[2rem]">
                   {`DAY ${index + 1} `}
                 </div>
                 <Schedule stages={stages[index]} />
-                <Guest />
+
                 <div className="embla__dots mt-[2.4rem]">
                   {scrollSnaps.map((_, index) => (
                     <DotButton
@@ -85,7 +85,7 @@ const EmblaCarousel = (props: PropType) => {
                           viewBox="0 0 8 8"
                           fill="none"
                         >
-                          <circle cx="4" cy="4" r="4" fill="white" />
+                          <circle cx="4" cy="4" r="4" fill="#B67E5C" />
                         </svg>
                       ) : (
                         <svg
@@ -95,7 +95,7 @@ const EmblaCarousel = (props: PropType) => {
                           viewBox="0 0 8 8"
                           fill="none"
                         >
-                          <circle cx="4" cy="4" r="4" fill="#00285C" />
+                          <circle cx="4" cy="4" r="4" fill="#E6C299" />
                         </svg>
                       )}
                     </DotButton>

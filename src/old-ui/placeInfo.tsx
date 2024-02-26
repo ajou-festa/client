@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const PlaceInfo = ({ place }: { place: Place }) => {
   return (
-    <div className="w-[26.1rem] h-[15.9rem] flex-shrink-0 bg-white border border-blue-400 rounded-xl p-8 relative">
+    <div className="w-[26.1rem] h-[15.9rem] flex-shrink-0 bg-white border border-brown-400 rounded-xl p-8 relative">
       <h1 className="w-[18.4rem] block text-2xl leading-4 font-bold text-blue-400 mb-2">
         {place && "boothId" in place && place.boothName}
         {place && "pubId" in place && place.pubName}

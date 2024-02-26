@@ -1,5 +1,5 @@
-import DayDisplay from "@/app/_commons/dayDisplay";
-import DateDisplay from "@/app/_commons/dateDisplay";
+// import DayDisplay from "@/app/_commons/dayDisplay";
+// import DateDisplay from "@/app/_commons/dateDisplay";
 import Map from "@/app/_commons/map";
 import SectionBar from "@/app/_commons/sectionBar";
 import { getCurrentDay } from "@/app/lib/utils";
@@ -22,13 +22,14 @@ interface DongbakPageProps {
 
 const DongbakBoothPage = ({ searchParams }: DongbakPageProps) => {
   // day가 쿼리스트링으로 넘어오지 않으면 오늘 날짜로 설정
+
   const selectedDay = Number(searchParams?.day) || getCurrentDay(new Date());
   // section이 쿼리스트링으로 넘어오지 않으면 G-1로 설정
   const selectedSection = searchParams?.section || "A";
 
-  if (selectedDay === -1) {
-    return <div>Invalid Date</div>;
-  }
+  // if (selectedDay === -1) {
+  //   return <div>Invalid Date</div>;
+  // }
 
   if (!DONGBAK_SECTION_LIST.some((s) => s.section === selectedSection)) {
     return <div>Invalid Section</div>;
@@ -36,27 +37,29 @@ const DongbakBoothPage = ({ searchParams }: DongbakPageProps) => {
 
   // fetchData 함수를 실행하고 그 결과를 대기함
   const fetchAndRenderData = async () => {
-    const dongbak = await fetchDongbakBooths(selectedDay, selectedSection);
+    const dongbak = await fetchDongbakBooths(1, selectedSection);
 
     return (
       <>
-        <DateDisplay selectedDay={selectedDay} />
-        <DayDisplay
+        {/* <DateDisplay selectedDay={selectedDay} /> */}
+        {/* <DayDisplay
           selectedDay={selectedDay}
           selectedSection={selectedSection}
-        />
-        <div className="flex mt-2 w-[33.4rem] h-[49.9rem] flex-col items-center rounded-xl overflow-hidden relative">
+        /> */}
+        <div className="w-[23.4rem] h-[3.8rem] bg-brown-400 border-2 border-brown-500 flex items-center justify-center rounded-full mb-4">
+          <span className="text-3xl font-bold text-center text-brown-500">
+            동아리 박람회 지도
+          </span>
+        </div>
+        <div className="flex mt-2 w-[33.5rem] h-[49.9rem] flex-col items-center border-2 border-brown-500 rounded-3xl overflow-hidden relative shadow-md">
           <Map
-            selectedDay={selectedDay}
+            selectedDay={1}
             selectedSection={selectedSection}
             places={dongbak}
           />
-          <SectionBar
-            selectedDay={selectedDay}
-            selectedSection={selectedSection}
-          />
+          <SectionBar selectedDay={1} selectedSection={selectedSection} />
           <PlaceNavigator
-            selectedDay={selectedDay}
+            selectedDay={1}
             selectedSection={selectedSection}
             places={dongbak}
           />

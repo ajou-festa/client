@@ -1,6 +1,6 @@
 import { FESTIVAL_DATE } from "./constants";
-import { emptyBooth, emptyPub } from "./placeholder-data";
-import { Pub, Booth, PlaceLocation, Place } from "./types";
+import { emptyBooth, emptyClub, emptyPub } from "./placeholder-data";
+import { Pub, Booth, PlaceLocation, Place, Club } from "./types";
 
 /**
  * 현재 날짜가 축제 기간 중 몇 번째 날인지 확인
@@ -64,9 +64,9 @@ export const getPlaceByLocation = (
   } else {
     return (
       places.find(
-        (place): place is Booth =>
-          "clubId" in place && place.section === location.location,
-      ) || emptyBooth
+        (place): place is Club =>
+          "clubId" in place && place.clubId.toString() === location.location,
+      ) || emptyClub
     );
   }
 };
@@ -91,6 +91,6 @@ export const getLocationByPlace = (
       } else {
         return location.location === place.clubId.toString();
       }
-    }) || { location: "", x: 0, y: 0, rotate: 0 }
+    }) || { location: "", x: 0, y: 0 }
   );
 };

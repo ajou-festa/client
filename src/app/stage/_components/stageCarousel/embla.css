@@ -10,10 +10,12 @@
 }
 .embla__viewport {
   overflow: hidden;
+  width: 325px;
 }
 .embla__container {
   backface-visibility: hidden;
   display: flex;
+  width: 325px;
   touch-action: pan-y;
   margin-left: calc(var(--slide-spacing) * -1);
 }

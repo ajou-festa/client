@@ -1,8 +1,6 @@
 export const fetchPubs = async (day: number, section: string) => {
   try {
-    const response = await fetch(
-      `https://ajou-festi.aoldacloud.com/v1/pubs?day=1&section=A4`,
-    );
+    const response = await fetch(`http://3.39.1.107/v1/pubs?day=1&section=A4`);
 
     if (!response.ok) {
       throw new Error("Failed to fetch pubs");
@@ -18,9 +16,9 @@ export const fetchPubs = async (day: number, section: string) => {
 //사용자 공연 목록 GET
 export const fetchStageData = async (day: number) => {
   try {
-    const response = await fetch(
-      `https://ajou-festi.aoldacloud.com/v1/shows?day=${day}`,
-    );
+    const response = await fetch(`http://3.39.1.107/v1/shows?day=${day}`, {
+      cache: "force-cache",
+    });
 
     if (!response.ok) {
       throw new Error("Failed to fetch pubs");
@@ -36,7 +34,7 @@ export const fetchStageData = async (day: number) => {
 export const fetchBooths = async (day: number, section: string) => {
   try {
     const response = await fetch(
-      `https://ajou-festi.aoldacloud.com/v1/boothes?day=1&section=seoungho1`,
+      `http://3.39.1.107/v1/boothes?day=1&section=seoungho1`,
     );
 
     if (!response.ok) {
@@ -53,12 +51,8 @@ export const fetchBooths = async (day: number, section: string) => {
 export const fetchDongbakBooths = async (day: number, section: string) => {
   try {
     const response = await fetch(
-      `https://ajou-festi.aoldacloud.com/v1/clubs?day=${day}&section=${section}`,
-      {
-        next: {
-          revalidate: 0,
-        },
-      },
+      `http://3.39.1.107/v1/clubs?day=${day}&section=${section}`,
+      { cache: "force-cache" },
     );
 
     if (!response.ok) {

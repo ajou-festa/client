@@ -1,20 +1,19 @@
-<svg width="28" height="28" viewBox="0 0 31 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 3.94183C0 3.50365 0.285257 3.11652 0.703762 2.98671L9.03709 0.402042C9.6806 0.202452 10.3333 0.683408 10.3333 1.35716V23.3006C10.3333 23.7388 10.0481 24.1259 9.62957 24.2557L1.29624 26.8404C0.652735 27.04 0 26.559 0 25.8853V3.94183Z" fill="url(#paint0_linear_148_141)"/>
-<path d="M20.6667 3.94175C20.6667 3.50358 20.9519 3.11644 21.3704 2.98664L29.7038 0.401966C30.3473 0.202376 31 0.683332 31 1.35708V23.3005C31 23.7387 30.7147 24.1258 30.2962 24.2556L21.9629 26.8403C21.3194 27.0399 20.6667 26.5589 20.6667 25.8852V3.94175Z" fill="url(#paint1_linear_148_141)"/>
-<path d="M10.3333 23.3005C10.3333 23.7387 10.6186 24.1258 11.0371 24.2556L19.3704 26.8403C20.0139 27.0399 20.6667 26.5589 20.6667 25.8852V3.94175C20.6667 3.50358 20.3814 3.11644 19.9629 2.98664L11.6296 0.401966C10.9861 0.202375 10.3333 0.683332 10.3333 1.35708V23.3005Z" fill="url(#paint2_linear_148_141)"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M13.9607 15.6654C11.9489 13.6536 8.68729 13.6536 6.67556 15.6654C4.92435 17.4166 4.66714 20.1661 6.06317 22.2117L9.77711 27.6538C10.0371 28.0348 10.5991 28.0348 10.8591 27.6538L14.5731 22.2117C15.9691 20.1661 15.7119 17.4166 13.9607 15.6654ZM10.2167 21.846C11.5634 21.846 12.6551 20.7543 12.6551 19.4076C12.6551 18.061 11.5634 16.9693 10.2167 16.9693C8.87005 16.9693 7.77836 18.061 7.77836 19.4076C7.77836 20.7543 8.87005 21.846 10.2167 21.846Z" fill="#005BE1"/>
-<defs>
-<linearGradient id="paint0_linear_148_141" x1="10" y1="-3.90137" x2="4.03955" y2="27.8568" gradientUnits="userSpaceOnUse">
-<stop stop-color="#005BE1"/>
-<stop offset="1" stop-color="#E6EFFC"/>
-</linearGradient>
-<linearGradient id="paint1_linear_148_141" x1="21" y1="0.0985564" x2="39.8746" y2="22.6978" gradientUnits="userSpaceOnUse">
-<stop stop-color="#005BE1"/>
-<stop offset="1" stop-color="#E6EFFC"/>
-</linearGradient>
-<linearGradient id="paint2_linear_148_141" x1="11" y1="23.0988" x2="17.1981" y2="1.88717" gradientUnits="userSpaceOnUse">
-<stop stop-color="#E6EFFC"/>
-<stop offset="1" stop-color="#005BE1"/>
-</linearGradient>
-</defs>
+<svg width="30" height="26" viewBox="0 0 30 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 298">
+<g id="Group 296">
+<g id="Group 292">
+<path id="Rectangle 2762" d="M1 20.6218L10.3335 21.9561V2.33438L1 1.00011V20.6218Z" fill="#FBF3E3" stroke="#B67E5C" stroke-linejoin="round"/>
+</g>
+<g id="Group 295">
+<path id="Rectangle 2762_2" d="M19.6668 20.6218L29.0003 21.9561V2.33438L19.6668 1.00011V20.6218Z" fill="#FBF3E3" stroke="#B67E5C" stroke-linejoin="round"/>
+</g>
+<g id="Group 294">
+<path id="Rectangle 2762_3" d="M19.6668 20.6218L10.3334 21.9561V2.33438L19.6668 1.00011V20.6218Z" fill="#FBF3E3" stroke="#B67E5C" stroke-linejoin="round"/>
+</g>
+</g>
+<g id="Group 297">
+<path id="Rectangle 2771" d="M15.9744 12.9151C18.2119 10.6777 21.8395 10.6777 24.0769 12.9151C26.3143 15.1526 26.3143 18.7802 24.0769 21.0176L20.0257 25.0688L15.9744 21.0176C13.737 18.7802 13.737 15.1526 15.9744 12.9151Z" fill="#E6C299" stroke="#B67E5C"/>
+<ellipse id="Ellipse 62" cx="20.0252" cy="16.8851" rx="2.67367" ry="2.67367" fill="#FBF3E3" stroke="#B67E5C"/>
+</g>
+</g>
 </svg>

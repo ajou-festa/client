@@ -2,6 +2,7 @@
 
 import useModalStore from "@/app/hooks/useModalStore";
 import useSelectedLocationStore from "@/app/hooks/useSelectedLocationStore";
+import { MapPinColor } from "../lib/constants";
 
 const PlaceModal = () => {
   const { isModalOpen, modalContent, closeModal } = useModalStore();
@@ -23,14 +24,19 @@ const PlaceModal = () => {
           onClick={handleOutsideClick}
         >
           <div
-            className="place-to-click animate-pulse bg-blue-300"
+            className="place-to-click bg-white"
             style={{
               top: `${location.y * 0.1}rem`,
               left: `${location.x * 0.1}rem`,
-              transform: `rotate(${location.rotate}deg)`,
             }}
           >
-            <span className="text-2xl font-bold">{location.location}</span>
+            <span
+              className={`text-2xl rotate-45 font-bold ${
+                "section" in place && MapPinColor[place.section][1]
+              }`}
+            >
+              {location.location.padStart(2, "0")}
+            </span>
           </div>
           <div className="w-full h-full flex flex-col justify-center items-center transition-all animate-popUp duration-200 ease-in-out">
             <div className="w-full h-[33%] mt-12 flex justify-center items-center">

@@ -1,10 +1,5 @@
 import Image from "next/image";
-import {
-  DONGBAK_SECTION_LIST,
-  PUB_LOCATIONS,
-  BOOTH_LOCATIONS,
-  DONGBAK_LOCATIONS,
-} from "@/app/lib/constants";
+import { DONGBAK_SECTION_LIST, DONGBAK_LOCATIONS } from "@/app/lib/constants";
 import { Place, PlaceLocation } from "@/app/lib/types";
 import { getPlaceByLocation } from "@/app/lib/utils";
 import MapIcon from "./mapIcon";
@@ -37,7 +32,7 @@ const Map = ({ selectedDay, selectedSection, places }: MapProps) => {
         sizes="(max-width: 60rem) 100vw, 40rem"
         priority
       />
-      {places &&
+      {/* {places &&
         "pubId" in places[0] &&
         PUB_LOCATIONS[selectedDay][selectedSection] &&
         PUB_LOCATIONS[selectedDay][selectedSection].map(
@@ -60,15 +55,15 @@ const Map = ({ selectedDay, selectedSection, places }: MapProps) => {
               place={getPlaceByLocation(places, location)}
             />
           ),
-        )}
+        )} */}
       {places &&
         "clubId" in places[0] &&
         DONGBAK_LOCATIONS[selectedDay][selectedSection] &&
         DONGBAK_LOCATIONS[selectedDay][selectedSection].map(
-          (location: PlaceLocation, index: number) => (
+          (location: PlaceLocation) => (
             <div
               key={location.location}
-              className="animate-bounce origin-bottom"
+              className="animate-bounce origin-center"
             >
               <MapIcon
                 placeLocation={location}

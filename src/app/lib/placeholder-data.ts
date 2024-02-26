@@ -2,7 +2,7 @@
 // day: "1" | "2" | "3"
 // section: "seongho1" | "seongho2" | "library" | "parking" | "theater" | "yard1" | "yard2"
 
-import { Booth, Pub } from "./types";
+import { Booth, Club, Pub } from "./types";
 
 export const dummyBooths: Booth[] = [
   {
@@ -85,4 +85,14 @@ export const emptyBooth: Booth = {
   closeTime: "23:00",
   link: "https://via.placeholder.com/150",
   linkIconId: "default",
+};
+
+export const emptyClub: Club = {
+  clubId: 0,
+  clubName: "동아리 구함",
+  clubDetail: "자리 비었음.",
+  clubActivities: ["자리 비었음."],
+  link: "https://via.placeholder.com/150",
+  linkIconId: "default",
+  section: "A",
 };

@@ -12,7 +12,7 @@ const DayDisplay = ({
   selectedSection,
 }: {
   selectedDay: number;
-  selectedSection: string;
+  selectedSection?: string;
 }) => {
   const { getQueryParam, getQueryUrl } = useQueryWithDefault();
   const { isDayOpen, setIsDayOpen, setIsNavOpen, setIsSectionBarOpen } =

@@ -3,14 +3,14 @@ import ScheduleTitle from "./ScheduleTitle";
 
 const ScheduleTitleWrapper = () => {
   return (
-    <div className="h-[5.3rem] w-full flex  justify-between px-[4.1rem] mb-4">
+    <div className="h-[4.9rem] w-full flex  justify-between mb-4 px-[1.3rem]">
       <div className="flex flex-col items-center">
-        <ScheduleTitle>시간</ScheduleTitle>
-        <hr className="h-[0.1rem] w-[5.1rem] rounded-[1rem]"></hr>
+        <ScheduleTitle>공연시간</ScheduleTitle>
+        <hr className="h-[0.1rem] w-[13rem] rounded-[1rem] bg-brown-500"></hr>
       </div>
       <div className="flex flex-col items-center">
         <ScheduleTitle>공연팀</ScheduleTitle>
-        <hr className="h-[0.1rem] w-[10.8rem] rounded-[1rem]"></hr>
+        <hr className="h-[0.1rem] w-[13rem] rounded-[1rem] bg-brown-500"></hr>
       </div>
     </div>
   );

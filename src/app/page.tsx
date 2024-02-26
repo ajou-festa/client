@@ -1,12 +1,6 @@
-import Link from "next/link";
-import React from "react";
-
+// "/"로 접속했을 때 "/entire-map"으로 리다이렉트
 const page = () => {
-  return (
-    <main className="flex max-w-screen-sm min-h-screen">
-      <div className="w-full bg-skyBlue-gradient bg-blue-800"></div>
-    </main>
-  );
+  return <div></div>;
 };
 
 export default page;
