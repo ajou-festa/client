@@ -31,6 +31,15 @@ const config: Config = {
           800: "#001234",
           900: "#2C72CD",
         },
+        //brown은 동박용 색상
+        brown: {
+          100: "#FAF8F5",
+          200: "#FBF3E3",
+          300: "#FBE6BF",
+          400: "#E6C299",
+          500: "#B67E5C",
+        },
+
         transparentBlue: {
           100: "rgba(230, 239, 252, 0.5)",
           200: "rgba(204, 222, 249, 0.7)",
@@ -46,6 +55,9 @@ const config: Config = {
           100: "#F5F5F5",
           200: "#BFBFBF",
           300: "#444444",
+          //여기부턴 동박용
+          400: "#E2E2E2",
+          500: "#EFEFEF",
         },
         icon: {
           1: "#047FFE",

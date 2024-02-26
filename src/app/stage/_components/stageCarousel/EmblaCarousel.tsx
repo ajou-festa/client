@@ -58,7 +58,7 @@ const EmblaCarousel = (props: PropType) => {
                 key={index}
               >
                 <div className="w-[29.5rem] flex justify-center items-center text-center h-[3rem] flex-shrink-0">
-                  <span className="w-[8rem] h-[2.1rem] font-semibold text-blue-300 text-[1.4rem] rounded-[3rem] bg-blue-700 mb-[0.5rem] p-[0.5rem] flex justify-center items-center">
+                  <span className="w-[8rem] h-[2.1rem] font-semibold text-blue-300 text-[1.4rem] rounded-[3rem] bg-white mb-[0.5rem] p-[0.5rem] flex justify-center items-center">
                     {isToday(index + 1)
                       ? "TODAY"
                       : getFormattedDate(FESTIVAL_DATE[index])}
