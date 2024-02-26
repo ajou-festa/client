@@ -1,14 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import BoothIc from "@/public/boothIcon.svg";
-import PubIc from "@/public/pubIcon.svg";
-import ReservationIc from "@/public/reservationIcon.svg";
-import ShowIc from "@/public/showIcon.svg";
-import IconHr from "@/public/iconHr.svg";
 import DongbakHr from "@/public/dongbakHr.svg";
 import Link from "next/link";
-import ClubIcon from "@/public/clubIcon.svg";
 import YootActiveIcon from "@/public/yootActiveIcon.svg";
 import DongyeonActiveIcon from "@/public/dongyeonActiveIcon.svg";
 import DongariActiveIcon from "@/public/dongariActiveIcon.svg";
@@ -19,22 +13,21 @@ import DongariIcon from "@/public/dongariIcon.svg";
 import BuskingIcon from "@/public/buskingIcon.svg";
 
 import { useEffect } from "react";
-import useIsFirstVisitedStore from "../hooks/useIsFirstVisited";
 
 const Footer = () => {
   const [selectedButton, setSelectedButton] = useState("");
 
+  useEffect(() => {
+    const cachedSelectedButton = sessionStorage.getItem("selectedButton");
+    if (cachedSelectedButton) {
+      setSelectedButton(cachedSelectedButton);
+    }
+  }, []);
+
   const handleClick = (buttonName: string) => {
     setSelectedButton(buttonName);
+    sessionStorage.setItem("selectedButton", buttonName);
   };
-
-  const isFirstVisited = useIsFirstVisitedStore(
-    (state) => state.isFirstVisited
-  );
-
-  useEffect(() => {
-    console.log(isFirstVisited, "d");
-  }, [selectedButton]);
 
   return (
     <div className="absolute bottom-0 w-full ">
