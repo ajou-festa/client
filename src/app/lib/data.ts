@@ -1,6 +1,6 @@
 export const fetchPubs = async (day: number, section: string) => {
   try {
-    const response = await fetch(`http://3.39.1.107/v1/pubs?day=1&section=A4`);
+    const response = await fetch(`http://3.36.106.99/v1/pubs?day=1&section=A4`);
 
     if (!response.ok) {
       throw new Error("Failed to fetch pubs");
@@ -34,7 +34,7 @@ export const fetchStageData = async (day: number) => {
 export const fetchBooths = async (day: number, section: string) => {
   try {
     const response = await fetch(
-      `http://3.39.1.107/v1/boothes?day=1&section=seoungho1`
+      `http://3.36.106.99/v1/boothes?day=1&section=seoungho1`,
     );
 
     if (!response.ok) {
@@ -51,8 +51,8 @@ export const fetchBooths = async (day: number, section: string) => {
 export const fetchDongbakBooths = async (day: number, section: string) => {
   try {
     const response = await fetch(
-      `http://3.39.1.107/v1/clubs?day=${day}&section=${section}`,
-      { cache: "force-cache" }
+      `http://3.36.106.99/v1/clubs?day=${day}&section=${section}`,
+      { cache: "force-cache" },
     );
 
     if (!response.ok) {
