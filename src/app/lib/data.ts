@@ -16,7 +16,7 @@ export const fetchPubs = async (day: number, section: string) => {
 //사용자 공연 목록 GET
 export const fetchStageData = async (day: number) => {
   try {
-    const response = await fetch(`http://3.39.1.107/v1/shows?day=${day}`, {
+    const response = await fetch(`http://3.36.106.99/v1/shows?day=${day}`, {
       cache: "force-cache",
     });
 
@@ -34,7 +34,7 @@ export const fetchStageData = async (day: number) => {
 export const fetchBooths = async (day: number, section: string) => {
   try {
     const response = await fetch(
-      `http://3.39.1.107/v1/boothes?day=1&section=seoungho1`,
+      `http://3.39.1.107/v1/boothes?day=1&section=seoungho1`
     );
 
     if (!response.ok) {
@@ -52,7 +52,7 @@ export const fetchDongbakBooths = async (day: number, section: string) => {
   try {
     const response = await fetch(
       `http://3.39.1.107/v1/clubs?day=${day}&section=${section}`,
-      { cache: "force-cache" },
+      { cache: "force-cache" }
     );
 
     if (!response.ok) {

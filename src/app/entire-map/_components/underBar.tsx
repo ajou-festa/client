@@ -25,7 +25,7 @@ const UnderBar = () => {
               }`}
             >
               <Exit />
-              <span className="text-blue-400">돌아가기</span>
+              <span className="text-brown-500">돌아가기</span>
             </button>
           </div>
         </div>

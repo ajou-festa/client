@@ -1,0 +1,42 @@
+.embla__viewport {
+  overflow: hidden;
+  width: 325px;
+}
+
+.embla_dongyeon {
+  --slide-spacing: 1rem;
+  --slide-size: 100%;
+  --slide-height: 19rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0px 5px 5px 0px rgba(230, 194, 153, 0.2);
+}
+
+.embla__container {
+  backface-visibility: hidden;
+  display: flex;
+  width: 325px;
+  touch-action: pan-y;
+  margin-left: calc(var(--slide-spacing) * -1);
+}
+.embla__slide {
+  flex: 0 0 var(--slide-size);
+  min-width: 0;
+
+  padding-left: var(--slide-spacing);
+  position: relative;
+}
+
+.sandbox {
+  height: 500px;
+  width: 320px;
+}
+@media (min-width: 750px) {
+  .sandbox {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 67rem;
+  }
+}

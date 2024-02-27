@@ -84,7 +84,7 @@ const SectionBar = ({
             ))}
           </ul>
         </div>
-        <div className="w-full h-[5rem] flex flex-row justify-between items-center bg-transparentWhite-200 pl-[2.4rem] py-4 pr-[2.6rem] border-t-2 border-brown-500">
+        <div className="w-full h-[5rem] flex flex-row justify-between items-center bg-transparentWhite-200 pl-[2.4rem] py-4 pr-[2.6rem] border-t-2 border-brown-500 backdrop-blur-sm">
           <button
             onClick={() => {
               setCameFromSection(true);
