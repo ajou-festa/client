@@ -1,7 +1,6 @@
 "use client";
 
 import { DONGBAK_SECTION_LIST } from "@/app/lib/constants";
-import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useQueryWithDefault } from "@/app/hooks/useQueryWithDefault";
 import EntireMap from "@/public/entire-map.svg";
@@ -22,37 +21,26 @@ const SectionBar = ({
   const { setCameFromSection } = useIsFirstStore();
   const router = useRouter();
 
-  const [selectedIndex, setSelectedIndex] = useState(
-    DONGBAK_SECTION_LIST.findIndex((s) => s.section === selectedSection),
+  const sections = Object.keys(DONGBAK_SECTION_LIST);
+  const maxIndex = sections.length - 1;
+  const selectedIndex = sections.findIndex(
+    (section) => section === selectedSection,
   );
-  const maxIndex = DONGBAK_SECTION_LIST.length - 1;
 
   const handleClickLeft = () => {
-    if (selectedIndex === 0) {
-      setSelectedIndex(maxIndex);
-    } else {
-      setSelectedIndex(selectedIndex - 1);
-    }
+    const prevIndex = selectedIndex === 0 ? maxIndex : selectedIndex - 1;
+    router.push(getQueryUrl(selectedDay, sections[prevIndex]));
   };
 
   const handleClickRight = () => {
-    if (selectedIndex === maxIndex) {
-      setSelectedIndex(0);
-    } else {
-      setSelectedIndex(selectedIndex + 1);
-    }
+    const nextIndex = selectedIndex === maxIndex ? 0 : selectedIndex + 1;
+    router.push(getQueryUrl(selectedDay, sections[nextIndex]));
   };
 
-  const handleClickSection = (index: number) => {
-    setSelectedIndex(index);
+  const handleClickSection = (sectionKey: string) => {
+    router.push(getQueryUrl(selectedDay, sectionKey));
     setIsSectionBarOpen(!isSectionBarOpen);
   };
-
-  useEffect(() => {
-    router.push(
-      getQueryUrl(selectedDay, DONGBAK_SECTION_LIST[selectedIndex].section),
-    );
-  }, [selectedDay, selectedIndex]);
 
   return (
     <>
@@ -63,23 +51,22 @@ const SectionBar = ({
           } transition-all duration-300 ease-in-out`}
         >
           <ul>
-            {DONGBAK_SECTION_LIST.map((section, index) => (
+            {sections.map((sectionKey, index) => (
               <li key={index}>
                 <div
                   className={`flex justify-center items-center w-full py-[1.5rem] hover:bg-brown-200 hover:font-semibold ${
-                    index === selectedIndex ? "hidden" : "block"
+                    sectionKey === selectedSection ? "hidden" : "block"
                   }`}
-                  onClick={() => handleClickSection(index)}
+                  onClick={() => handleClickSection(sectionKey)}
                 >
                   <span className="text-2xl text-brown-500 text-center font-semibold">
-                    {section.name}
+                    {
+                      DONGBAK_SECTION_LIST[sectionKey as "A" | "B" | "C" | "D"]
+                        .name
+                    }
                   </span>
                 </div>
-                <div
-                  className={`w-full h-[0.25px] bg-gray-50 ${
-                    index !== maxIndex ? "block" : "hidden"
-                  }`}
-                ></div>
+                <div className={`w-full border-gray-50 border-[0.1px]`}></div>
               </li>
             ))}
           </ul>
@@ -99,7 +86,10 @@ const SectionBar = ({
             </div>
           </button>
           <span className="w-[13.8rem] font-semibold text-3xl text-center text-brown-500">
-            {DONGBAK_SECTION_LIST[selectedIndex]?.name}
+            {
+              DONGBAK_SECTION_LIST[selectedSection as "A" | "B" | "C" | "D"]
+                .name
+            }
           </span>
           <button onClick={() => handleClickRight()}>
             <div className="w-5 h-5 rotate-45 border-t-2 border-r-2 border-brown-500">

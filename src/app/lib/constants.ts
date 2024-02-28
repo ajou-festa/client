@@ -40,28 +40,29 @@ const SECTION_LIST = [
   },
 ];
 
-export const DONGBAK_SECTION_LIST = [
-  {
-    section: "A",
+export const DONGBAK_SECTION_LIST: {
+  [key in "A" | "B" | "C" | "D"]: {
+    name: string;
+    image: string;
+  };
+} = {
+  A: {
     name: "A구역",
     image: "/sectionA.png",
   },
-  {
-    section: "B",
+  B: {
     name: "B구역",
     image: "/sectionB.png",
   },
-  {
-    section: "C",
+  C: {
     name: "C구역",
     image: "/sectionC.png",
   },
-  {
-    section: "D",
+  D: {
     name: "D구역",
     image: "/sectionD.png",
   },
-];
+};
 
 export const MapPinColor = {
   A: ["bg-mapPin-1", "text-mapPin-1"],

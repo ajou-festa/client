@@ -5,7 +5,6 @@ import SectionBar from "@/app/_commons/sectionBar";
 import { getCurrentDay } from "@/app/lib/utils";
 import PlaceNavigator from "@/app/_commons/placeNavigator";
 import { fetchDongbakBooths } from "@/app/lib/data";
-import { DONGBAK_SECTION_LIST } from "@/app/lib/constants";
 import PlaceModal from "../_commons/placeModal";
 
 export const metadata = {
@@ -16,24 +15,18 @@ export const metadata = {
 interface DongbakPageProps {
   searchParams?: {
     day?: string;
-    section?: string;
+    section?: "A" | "B" | "C" | "D";
   };
 }
 
 const DongbakBoothPage = ({ searchParams }: DongbakPageProps) => {
   // day가 쿼리스트링으로 넘어오지 않으면 오늘 날짜로 설정
-
   const selectedDay = Number(searchParams?.day) || getCurrentDay(new Date());
-  // section이 쿼리스트링으로 넘어오지 않으면 G-1로 설정
   const selectedSection = searchParams?.section || "A";
 
   // if (selectedDay === -1) {
   //   return <div>Invalid Date</div>;
   // }
-
-  if (!DONGBAK_SECTION_LIST.some((s) => s.section === selectedSection)) {
-    return <div>Invalid Section</div>;
-  }
 
   // fetchData 함수를 실행하고 그 결과를 대기함
   const fetchAndRenderData = async () => {

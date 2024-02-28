@@ -1,6 +1,8 @@
 export const fetchPubs = async (day: number, section: string) => {
   try {
-    const response = await fetch(`http://3.36.106.99/v1/pubs?day=1&section=A4`);
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/pubs?day=1&section=A4`,
+    );
 
     if (!response.ok) {
       throw new Error("Failed to fetch pubs");
@@ -16,9 +18,9 @@ export const fetchPubs = async (day: number, section: string) => {
 //사용자 공연 목록 GET
 export const fetchStageData = async (day: number) => {
   try {
-    const response = await fetch(`http://3.36.106.99/v1/shows?day=${day}`, {
-      cache: "force-cache",
-    });
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/shows?day=${day}`,
+    );
 
     if (!response.ok) {
       throw new Error("Failed to fetch pubs");
@@ -34,7 +36,7 @@ export const fetchStageData = async (day: number) => {
 export const fetchBooths = async (day: number, section: string) => {
   try {
     const response = await fetch(
-      `http://3.36.106.99/v1/boothes?day=1&section=seoungho1`,
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/boothes?day=1&section=seoungho1`,
     );
 
     if (!response.ok) {
@@ -51,12 +53,33 @@ export const fetchBooths = async (day: number, section: string) => {
 export const fetchDongbakBooths = async (day: number, section: string) => {
   try {
     const response = await fetch(
-      `http://3.36.106.99/v1/clubs?day=${day}&section=${section}`,
-      { cache: "force-cache" },
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/clubs?day=${day}&section=${section}`,
     );
 
     if (!response.ok) {
       throw new Error("Failed to fetch dongbak booths");
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const fetchGamePlayers = async () => {
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/game`,
+      {
+        next: {
+          revalidate: 300,
+        },
+      },
+    );
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch game players");
     }
 
     const data = await response.json();

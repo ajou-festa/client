@@ -54,19 +54,19 @@ const EmblaCarousel = (props: PropType) => {
           <div className="embla__container">
             {slides.map((index) => (
               <div className="embla__slide flex flex-col" key={index}>
-                <div className="w-[32.5rem] flex justify-center items-center text-center h-[3rem] flex-shrink-0">
-                  <span className="w-[8rem] h-[2.1rem] font-semibold text-brown-100 text-[1.4rem] rounded-[3rem] bg-brown-400 mb-[0.5rem] p-[0.5rem] flex justify-center items-center">
+                <div className="w-[32.5rem] mt-[1.5rem]  flex justify-center items-center text-center h-[3rem] flex-shrink-0">
+                  <span className="w-[8rem] h-[2.1rem] font-semibold text-brown-100 text-[1.4rem] rounded-[3rem] bg-brown-400 mb-[1rem] p-[0.5rem] flex justify-center items-center">
                     {isToday(index + 1)
                       ? "TODAY"
                       : getFormattedDate(FESTIVAL_DATE[index])}
                   </span>
                 </div>
-                <div className="w-[32.5rem] text-brown-500 text-center text-3xl font-bold flex items-center justify-center mb-[2rem]">
+                <div className="w-[32.5rem] text-brown-500 text-center text-3xl font-bold flex items-center justify-center mb-[1rem]">
                   {`DAY ${index + 1} `}
                 </div>
                 <Schedule stages={stages[index]} />
 
-                <div className="embla__dots mt-[2.4rem]">
+                <div className="embla__dots mt-[1.4rem]">
                   {scrollSnaps.map((_, index) => (
                     <DotButton
                       key={index}

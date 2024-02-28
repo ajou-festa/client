@@ -10,6 +10,7 @@ import useModalStore from "@/app/hooks/useModalStore";
 import ClubInfo from "../clubInfo";
 import useIsOpenStore from "@/app/hooks/useIsOpenStore";
 import ClubCard from "./clubCard";
+import HandleArrowLeft from "@/public/handle-arrow-left.svg";
 
 interface PlaceNavigatorProps {
   places: Place[];
@@ -91,13 +92,17 @@ const PlaceNavigator = ({
         className="relative flex justify-end w-full h-full transform translate-x-[-77%]"
         ref={divRef}
       >
-        <div
-          // onTouchStart={handleTouchStart}
-          // onTouchMove={handleTouchMove}
-          // onTouchEnd={handleTouchEnd}
-          onClick={handleClickHandle}
-        >
-          <NavigatorHandle className="mt-[1.6rem]" />
+        <div className="relative">
+          <NavigatorHandle
+            className="mt-[1.6rem]"
+            onClick={handleClickHandle}
+          />
+          <HandleArrowLeft
+            className={`absolute top-[3rem] left-3 ${
+              isNavOpen ? "rotate-180" : ""
+            }`}
+            onClick={handleClickHandle}
+          />
         </div>
         <div
           className={`flex flex-col p-4 gap-4 items-center w-full bg-brown-500 overflow-y-auto ${
@@ -128,6 +133,7 @@ const PlaceNavigator = ({
               <ClubCard place={place as Club} />
             </div>
           ))}
+          <div className="h-32 mb-10">&nbsp;</div>
         </div>
       </div>
     </div>

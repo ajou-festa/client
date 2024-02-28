@@ -2,10 +2,10 @@
 
 // import PubIc from "@/public/pubIcon.svg";
 // import ReservationIc from "@/public/reservationIcon.svg";
-import ShowIc from "@/public/showIcon.svg";
-import IconHr from "@/public/iconHr.svg";
-import ClubIcon from "@/public/clubIcon.svg";
-import BoothIc from "@/public/boothIcon.svg";
+// import ShowIc from "@/public/showIcon.svg";
+// import IconHr from "@/public/iconHr.svg";
+// import ClubIcon from "@/public/clubIcon.svg";
+// import BoothIc from "@/public/boothIcon.svg";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import useIsFirstStore from "../hooks/useIsFirstStore";
@@ -14,11 +14,11 @@ import DongbakHr from "@/public/dongbakHr.svg";
 import DongyeonActiveIcon from "@/public/dongyeonActiveIcon.svg";
 import DongariActiveIcon from "@/public/dongariActiveIcon.svg";
 import BuskingActiveIcon from "@/public/buskingActiveIcon.svg";
-import YootIcon from "@/public/yootIcon.svg";
+import PlayIcon from "@/public/playIcon.svg";
 import DongyeonIcon from "@/public/dongyeonIcon.svg";
 import DongariIcon from "@/public/dongariIcon.svg";
 import BuskingIcon from "@/public/buskingIcon.svg";
-import YootActiveIcon from "@/public/yootActiveIcon.svg";
+import PlayActiveIcon from "@/public/playActiveIcon.svg";
 
 const links = [
   { name: "버스킹", href: ["/stage"], icon: [BuskingIcon, BuskingActiveIcon] },
@@ -32,7 +32,7 @@ const links = [
     href: ["/dongwha"],
     icon: [DongyeonIcon, DongyeonActiveIcon],
   },
-  { name: "윶놀이", href: ["/yoot"], icon: [YootIcon, YootActiveIcon] },
+  { name: "공기놀이", href: ["/play"], icon: [PlayIcon, PlayActiveIcon] },
 ];
 
 const FooterLinks = () => {

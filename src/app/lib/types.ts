@@ -56,3 +56,9 @@ export interface Stage {
   endTime: string;
   status: string;
 }
+
+export interface GamePlayer {
+  studentId: number;
+  level: number;
+  name: string;
+}
