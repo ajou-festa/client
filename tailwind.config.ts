@@ -65,16 +65,16 @@ const config: Config = {
           3: "#80D0EC",
         },
         section: {
-          1: "rgba(206,135,134,0.6)",
-          2: "rgba(232, 212, 127, 0.6)",
-          3: "rgba(196,199,231,0.6)",
-          4: "rgba(156,206,152, 0.6)",
+          1: "rgba(187,98,94,0.6)",
+          2: "rgba(224, 191, 92, 0.6)",
+          3: "rgba(104,123,184,0.6)",
+          4: "rgba(129,187,113, 0.6)",
         },
         mapPin: {
-          1: "#FF4751",
-          2: "#FFB120",
-          3: "#3571FF",
-          4: "#13C900",
+          1: "rgb(187,98,94)",
+          2: "rgb(224, 191, 92)",
+          3: "rgb(104, 123, 184)",
+          4: "rgb(129,187,113)",
         },
       },
 
@@ -89,11 +89,23 @@ const config: Config = {
           "0%": { transform: "scale(0)" },
           "100%": { transform: "scale(1)" },
         },
+
+        rotate: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+
+        vanish: {
+          "0%": { opacity: "1" },
+          "100%": { opacity: "0" },
+        },
       },
 
       animation: {
         bounce: "bounce 0.4s ease-in-out",
         popUp: "popUp 0.1s ease-in-out",
+        loading: "rotate 1s linear",
+        vanish: "vanish 5s ease-in-out",
       },
     },
   },

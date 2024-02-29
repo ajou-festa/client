@@ -23,6 +23,7 @@ export const useSelectedSnapDisplay = (
     updateScrollSnapState(emblaApi);
     emblaApi.on("select", updateScrollSnapState);
     emblaApi.on("reInit", updateScrollSnapState);
+    console.log("달라짐");
   }, [emblaApi, updateScrollSnapState]);
 
   return {

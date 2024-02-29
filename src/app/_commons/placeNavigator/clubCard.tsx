@@ -58,7 +58,10 @@ const ClubCard = ({ place }: { place: Club }) => {
             />
           </a>
 
-          <a href={`tel:010-1234-5678`} onClick={(e) => e.stopPropagation()}>
+          <a
+            href={`tel:${place.phoneNumber}`}
+            onClick={(e) => e.stopPropagation()}
+          >
             <Image
               src={"/call-icon.svg"}
               alt="동아리 임원 연락처"

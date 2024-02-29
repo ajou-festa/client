@@ -28,8 +28,8 @@ const sectionLinks = [
   {
     name: "D구역",
     href: "/dongbak/?day=1&section=D",
-    x: 16.5,
-    y: 10,
+    x: 15.5,
+    y: 11,
     diameter: 10,
     color: "bg-section-4",
   },

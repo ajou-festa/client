@@ -17,6 +17,7 @@ const Schedule = ({ stages }: ScheduleProps) => {
         <StageCurrentButton
           key={stage.id}
           startTime={stage.startTime}
+          endTime={stage.endTime}
           showName={stage.teamName}
         />
       ))}

@@ -2,7 +2,7 @@
 // day: "1" | "2" | "3"
 // section: "seongho1" | "seongho2" | "library" | "parking" | "theater" | "yard1" | "yard2"
 
-import { Booth, Club, Pub } from "./types";
+import { Booth, Club, GamePlayer, Pub } from "./types";
 
 export const dummyBooths: Booth[] = [
   {
@@ -92,7 +92,14 @@ export const emptyClub: Club = {
   clubName: "동아리 구함",
   clubDetail: "자리 비었음.",
   clubActivities: ["자리 비었음."],
-  link: "https://via.placeholder.com/150",
+  link: "https://www.instagram.com/ajou_club.union/",
   linkIconId: "default",
   section: "A",
+  phoneNumber: "010-0000-0000",
+};
+
+export const dummyPlayer: GamePlayer = {
+  studentId: 123456789,
+  level: 0,
+  name: "공석",
 };

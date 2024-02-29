@@ -81,8 +81,10 @@ const SectionBar = ({
             <EntireMap />
           </button>
           <button onClick={() => handleClickLeft()}>
-            <div className="w-5 h-5 rotate-45 border-b-2 border-l-2 border-brown-500">
-              &nbsp;
+            <div className="w-12 h-10 flex items-center justify-center">
+              <div className="w-5 h-5 rotate-45 border-b-2 border-l-2 border-brown-500">
+                &nbsp;
+              </div>
             </div>
           </button>
           <span className="w-[13.8rem] font-semibold text-3xl text-center text-brown-500">
@@ -92,19 +94,22 @@ const SectionBar = ({
             }
           </span>
           <button onClick={() => handleClickRight()}>
-            <div className="w-5 h-5 rotate-45 border-t-2 border-r-2 border-brown-500">
-              &nbsp;
+            <div className="w-12 h-10 flex items-center justify-center">
+              <div className="w-5 h-5 rotate-45 border-t-2 border-r-2 border-brown-500">
+                &nbsp;
+              </div>
             </div>
           </button>
           <button
-            className="mr-2"
             onClick={() => {
               setIsSectionBarOpen(!isSectionBarOpen);
               setIsNavOpen(false);
               setIsDayOpen(false);
             }}
           >
-            <SectionList />
+            <div className="w-12 h-10 flex items-center justify-center">
+              <SectionList />
+            </div>
           </button>
         </div>
       </div>

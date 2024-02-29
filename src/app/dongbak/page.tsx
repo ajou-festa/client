@@ -6,10 +6,11 @@ import { getCurrentDay } from "@/app/lib/utils";
 import PlaceNavigator from "@/app/_commons/placeNavigator";
 import { fetchDongbakBooths } from "@/app/lib/data";
 import PlaceModal from "../_commons/placeModal";
+import { Metadata } from "next";
 
-export const metadata = {
-  title: "Dongbak",
-  description: "Dongbak Page",
+export const metadata: Metadata = {
+  title: "동박 지도",
+  description: "동박 지도 | 동화",
 };
 
 interface DongbakPageProps {

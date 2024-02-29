@@ -94,3 +94,14 @@ export const getLocationByPlace = (
     }) || { location: "", x: 0, y: 0 }
   );
 };
+
+export const getKoreanTime = () => {
+  const date = new Date();
+  const koreanTime = date.toLocaleTimeString("ko-KR", {
+    hour12: false,
+    hour: "numeric",
+    minute: "numeric",
+  });
+
+  return koreanTime;
+};

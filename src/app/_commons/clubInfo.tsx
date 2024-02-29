@@ -33,7 +33,10 @@ const ClubInfo = ({ place }: { place: Club }) => {
       )}
 
       <div className="absolute top-6 right-5 flex gap-1">
-        <a href={`tel:010-1234-5678`} onClick={(e) => e.stopPropagation()}>
+        <a
+          href={`tel:${place.phoneNumber}`}
+          onClick={(e) => e.stopPropagation()}
+        >
           <Image
             src={"/call-icon.svg"}
             alt="동아리 임원 연락처"

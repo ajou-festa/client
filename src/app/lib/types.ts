@@ -31,6 +31,7 @@ export type Club = {
   link: string;
   linkIconId: "instagram" | "picture" | "default";
   section: "A" | "B" | "C" | "D";
+  phoneNumber: string;
 };
 
 export type Place = Pub | Booth | Club;
