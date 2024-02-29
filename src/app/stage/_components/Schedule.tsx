@@ -10,7 +10,7 @@ interface ScheduleProps {
 
 const Schedule = ({ stages }: ScheduleProps) => {
   return (
-    <div className="w-[32.5rem] h-[45.5rem] flex flex-col items-center  relative rounded-[1.5rem] bg-white px-[1.2rem]">
+    <div className="w-[32.5rem] h-[44.5rem] flex flex-col items-center  relative rounded-[1.5rem] bg-white px-[1.2rem]">
       <ScheduleTitleWrapper />
       {/* <div className=" overflow-y-scroll w-[27.4rem] h-[22rem] px-[2.5rem]"> */}
       {stages.map((stage, index) => (
@@ -20,7 +20,7 @@ const Schedule = ({ stages }: ScheduleProps) => {
           showName={stage.teamName}
         />
       ))}
-      <div className="w-full h-[2.4rem] flex gap-[1.2rem] text-center font-bold  text-[1.6rem] px-[1.6rem] mt-[3rem] ">
+      <div className="w-full h-[2.4rem] flex gap-[1.2rem] text-center font-bold  text-[1.6rem] px-[1.6rem] mt-[2rem] ">
         <div className="w-[5rem] h-[2.4rem] rounded-[5rem] text-center font-bold bg-brown-500 text-brown-100 text-[1.6rem]">
           상시
         </div>

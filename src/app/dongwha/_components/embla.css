@@ -1,6 +1,6 @@
 .embla__viewport {
   overflow: hidden;
-  width: 325px;
+  width: 315px;
 }
 
 .embla_dongyeon {
@@ -12,6 +12,7 @@
   flex-direction: column;
   justify-content: center;
   box-shadow: 0px 5px 5px 0px rgba(230, 194, 153, 0.2);
+  border-radius: 15px;
 }
 
 .embla__container {
@@ -21,22 +22,11 @@
   touch-action: pan-y;
   margin-left: calc(var(--slide-spacing) * -1);
 }
+
 .embla__slide {
   flex: 0 0 var(--slide-size);
   min-width: 0;
 
   padding-left: var(--slide-spacing);
   position: relative;
-}
-
-.sandbox {
-  height: 500px;
-  width: 320px;
-}
-@media (min-width: 750px) {
-  .sandbox {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 67rem;
-  }
 }

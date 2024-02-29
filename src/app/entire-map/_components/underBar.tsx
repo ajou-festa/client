@@ -19,8 +19,8 @@ const UnderBar = () => {
         <div>
           <button
             onClick={router.back}
-            className={`flex flex-col items-center justify-center mt-1 ${
-              cameFromSection === true ? "visible" : "invisible"
+            className={`flex flex-col items-center justify-center ${
+              cameFromSection ? "visible" : "invisible"
             }`}
           >
             <Exit />

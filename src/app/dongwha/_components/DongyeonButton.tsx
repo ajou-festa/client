@@ -5,7 +5,7 @@ import { useState } from "react";
 const DongyeonButton = () => {
   const [isClicked, setIsClicked] = useState("dongari");
 
-  const clickedStyle = "bg-brown-500 text-white";
+  const clickedStyle = "bg-brown-500 border-[0.2rem]  text-white";
   const unClickedStyle =
     "bg-white text-brown-500 border-[0.2rem] border-solid border-brown-500";
 
