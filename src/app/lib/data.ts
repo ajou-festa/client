@@ -1,23 +1,6 @@
 import { GamePlayer } from "./types";
 import { getKoreanTime } from "./utils";
 
-export const fetchPubs = async (day: number, section: string) => {
-  try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/pubs?day=1&section=A4`,
-    );
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch pubs");
-    }
-
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error(error);
-  }
-};
-
 //사용자 공연 목록 GET
 export const fetchStageData = async (day: number) => {
   try {
@@ -25,7 +8,7 @@ export const fetchStageData = async (day: number) => {
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/shows?day=${day}`,
       {
         next: {
-          revalidate: 900, // 15분
+          revalidate: 60,
         },
       },
     );
@@ -38,23 +21,6 @@ export const fetchStageData = async (day: number) => {
   } catch (error) {
     console.log(error);
     return [];
-  }
-};
-
-export const fetchBooths = async (day: number, section: string) => {
-  try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/boothes?day=1&section=seoungho1`,
-    );
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch booths");
-    }
-
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error(error);
   }
 };
 

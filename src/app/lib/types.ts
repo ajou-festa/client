@@ -51,11 +51,11 @@ export type PlaceLocations = {
 };
 
 export interface Stage {
-  id: null;
+  id: string;
   teamName: string;
   startTime: string;
   endTime: string;
-  status: string;
+  status: "SCHEDULED" | "IN_PROGRESS" | "DONE";
 }
 
 export interface GamePlayer {

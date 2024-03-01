@@ -8,7 +8,13 @@ import { Pub, Booth, PlaceLocation, Place, Club } from "./types";
  * @returns {number} - 1, 2, 3 | -1
  */
 export const getCurrentDay = (date: Date): number => {
-  const currentDate = date.toISOString().slice(0, 10);
+  const curr = new Date();
+  const utc = curr.getTime() + curr.getTimezoneOffset() * 60 * 1000;
+
+  const KR_TIME_DIFF = 9 * 60 * 60 * 1000;
+  const kr_curr = new Date(utc + KR_TIME_DIFF);
+
+  const currentDate = kr_curr.toISOString().slice(0, 10);
 
   return FESTIVAL_DATE.includes(currentDate)
     ? FESTIVAL_DATE.findIndex((date) => date === currentDate) + 1
@@ -16,7 +22,7 @@ export const getCurrentDay = (date: Date): number => {
 };
 
 /**
- * 축제 기간 중 선택된 날이 오늘인지 확인
+ * 축제 기간 중 선택된 날이 오늘인지 확인 (한국 시간 기준)
  * @param {number} day - 1, 2, 3
  * @returns {boolean} true | false
  */

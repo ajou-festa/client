@@ -40,7 +40,7 @@ const DongbakBoothPage = ({ searchParams }: DongbakPageProps) => {
           selectedDay={selectedDay}
           selectedSection={selectedSection}
         /> */}
-        <div className="w-[23.4rem] h-[3.8rem] bg-brown-400 border-2 border-brown-500 flex items-center justify-center rounded-full mb-4">
+        <div className="w-[23.4rem] h-[3.8rem] bg-brown-300 border-2 border-brown-500 flex items-center justify-center rounded-full mb-4">
           <span className="text-3xl font-bold text-center text-brown-500">
             동아리 박람회 지도
           </span>

@@ -7,7 +7,7 @@ type UseSelectedSnapDisplayType = {
 };
 
 export const useSelectedSnapDisplay = (
-  emblaApi: EmblaCarouselType | undefined
+  emblaApi: EmblaCarouselType | undefined,
 ): UseSelectedSnapDisplayType => {
   const [selectedSnap, setSelectedSnap] = useState(0);
   const [snapCount, setSnapCount] = useState(0);
@@ -23,7 +23,6 @@ export const useSelectedSnapDisplay = (
     updateScrollSnapState(emblaApi);
     emblaApi.on("select", updateScrollSnapState);
     emblaApi.on("reInit", updateScrollSnapState);
-    console.log("달라짐");
   }, [emblaApi, updateScrollSnapState]);
 
   return {

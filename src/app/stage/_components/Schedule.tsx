@@ -1,36 +1,46 @@
 import React from "react";
-import ScheduleGradient from "../../../../public/scheduleGradient.svg";
-import ScheduleTitleWrapper from "./ScheduleTitleWrapper";
 import StageCurrentButton from "./StageCurrentButton";
 import { Stage } from "@/app/lib/types";
+import { checkNow } from "./checkNow";
 
 interface ScheduleProps {
   stages: Stage[];
+  day: number;
+  isToday: boolean;
 }
 
-const Schedule = ({ stages }: ScheduleProps) => {
+const Schedule = ({ stages, isToday }: ScheduleProps) => {
   return (
-    <div className="w-[32.5rem] h-[44.5rem] flex flex-col items-center  relative rounded-[1.5rem] bg-white px-[1.2rem]">
-      <ScheduleTitleWrapper />
-      {/* <div className=" overflow-y-scroll w-[27.4rem] h-[22rem] px-[2.5rem]"> */}
-      {stages.map((stage, index) => (
-        <StageCurrentButton
-          key={stage.id}
-          startTime={stage.startTime}
-          endTime={stage.endTime}
-          showName={stage.teamName}
-        />
-      ))}
-      <div className="w-full h-[2.4rem] flex gap-[1.2rem] text-center font-bold  text-[1.6rem] px-[1.6rem] mt-[2rem] ">
-        <div className="w-[5rem] h-[2.4rem] rounded-[5rem] text-center font-bold bg-brown-500 text-brown-100 text-[1.6rem]">
-          상시
+    <div className="w-[32.5rem] flex flex-col items-center justify-center ">
+      <div className="w-[31rem] pt-4 pb-8 h-fit flex flex-col items-center justify-center relative rounded-3xl bg-white px-[0.4rem] overflow-hidden">
+        <div className="h-[4.5rem] w-full flex  justify-between mb-4 px-[1.3rem]">
+          <div className="w-[13rem] h-[4rem] text-brown-500 text-[1.6rem] flex items-center justify-center font-bold border-b-2 border-brown-500">
+            공연시간
+          </div>
+          <div className="w-[13rem] h-[4rem] text-brown-500 text-[1.6rem] flex items-center justify-center font-bold border-b-2 border-brown-500">
+            공연팀
+          </div>
         </div>
-        <div className="w-[24rem] h-[1.7rem]  text-center font-bold text-brown-500 text-[1.6rem]">
-          아주대학교 중앙동아리 AMI 전시
+        {stages.map((stage, index) => (
+          <StageCurrentButton
+            key={stage.id}
+            startTime={stage.startTime}
+            endTime={stage.endTime}
+            showName={stage.teamName}
+            status={stage.status}
+            isNow={checkNow(stage.startTime, stage.endTime)}
+            isToday={isToday}
+          />
+        ))}
+        <div className="w-full flex justify-between text-center font-bold  text-2xl px-[1.6rem] mt-[2rem] ">
+          <div className="flex justify-center items-center w-[6rem] h-[2.4rem] rounded-[5rem] text-center font-bold bg-brown-500 text-brown-100">
+            상시
+          </div>
+          <div className="ml-2 flex justify-center items-center  w-[24rem]  text-center font-semibold text-brown-500">
+            아주대학교 중앙동아리 AMI 전시
+          </div>
         </div>
       </div>
-      {/* </div> */}
-      {/* <ScheduleGradient className="absolute bottom-0" /> */}
     </div>
   );
 };
