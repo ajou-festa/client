@@ -96,12 +96,12 @@ export const getLocationByPlace = (
 };
 
 export const getKoreanTime = () => {
-  const date = new Date();
-  const koreanTime = date.toLocaleTimeString("ko-KR", {
-    hour12: false,
-    hour: "numeric",
-    minute: "numeric",
-  });
+  const curr = new Date();
+  const utc = curr.getTime() + curr.getTimezoneOffset() * 60 * 1000;
 
-  return koreanTime;
+  const KR_TIME_DIFF = 9 * 60 * 60 * 1000;
+  const kr_curr = new Date(utc + KR_TIME_DIFF);
+
+  // 00:00 형식
+  return kr_curr.toTimeString().slice(0, 5);
 };
