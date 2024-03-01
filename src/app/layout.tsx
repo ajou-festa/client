@@ -1,7 +1,6 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
-import Footer from "@/app/_commons/Footer";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import CustomRootLayout from "./_commons/rootLayout";
 
 export const metadata: Metadata = {
   manifest: "/manifest.json",
@@ -17,14 +16,6 @@ export const metadata: Metadata = {
     description: "동아리박람회 도우미 | 동화",
     url: "https://ajoufesta.com/entire-map",
     siteName: "동아리박람회 | 동화",
-    images: [
-      {
-        url: "/thumbnail.png",
-        width: 800,
-        height: 600,
-        alt: "동아리박람회 썸네일",
-      },
-    ],
     type: "website",
     locale: "ko_KR",
   },
@@ -58,15 +49,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="ko">
-      <body className="h-screen w-screen max-w-screen-sm bg-brown-100 relative flex flex-col items-center mx-auto">
-        <main className="h-[calc(100vh-9.4rem)] flex flex-col justify-center items-center">
-          {children}
-        </main>
-        <Footer />
-      </body>
-      <GoogleAnalytics gaId="G-9Q7W6YM2CM" />
-    </html>
-  );
+  return <CustomRootLayout>{children}</CustomRootLayout>;
 }

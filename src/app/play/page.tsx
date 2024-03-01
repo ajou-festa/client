@@ -7,6 +7,7 @@ import dynamic from "next/dynamic";
 const Fireworks = dynamic(() => import("./_components/firework"), {
   ssr: false,
 });
+
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
